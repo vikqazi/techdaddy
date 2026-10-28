@@ -171,6 +171,7 @@ footer a:hover{color:var(--cyan)}
   nav .links a{padding:6px 6px;font-size:12px}
   nav .links a::before{display:none}
   .hero{padding:60px 0 40px}
+  .term{min-height:3.2em}
   .card,.card.wide{grid-column:span 6}
   .stats{grid-template-columns:1fr 1fr}
   .stat:nth-child(2){border-right:0}
@@ -182,6 +183,7 @@ footer a:hover{color:var(--cyan)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+  .term .cur{animation:blink 1s steps(1) infinite!important}
   .rv{opacity:1;transform:none}
 }
 </style>
@@ -214,7 +216,7 @@ footer a:hover{color:var(--cyan)}
     <div class="stat"><b data-count="4">0</b><span>States mapped</span></div>
     <div class="stat"><b data-count="2">0</b><span>Live tools</span></div>
     <div class="stat"><b data-count="103" data-suffix="+">0</b><span>Flushes analyzed</span></div>
-    <div class="stat"><b data-count="9">0</b><span>Weddings officiated</span></div>
+    <div class="stat"><b data-count="10">0</b><span>Weddings officiated</span></div>
   </div>
 </div></header>
 
@@ -243,8 +245,8 @@ footer a:hover{color:var(--cyan)}
   <div class="hats rv">
     <div class="hat"><i>🦆</i><b>Hunter</b><span>10+ grouse seasons · waterfowl</span></div>
     <div class="hat"><i>💻</i><b>App builder</b><span>Maps, mobile, data</span></div>
-    <div class="hat"><i>🎯</i><b>NRA instructor</b><span>~87 students taught</span></div>
-    <div class="hat"><i>💍</i><b>Officiant</b><span>9 weddings</span></div>
+    <div class="hat"><i>🎯</i><b>NRA instructor</b><span>Teaching since 2020</span></div>
+    <div class="hat"><i>💍</i><b>Officiant</b><span>10 weddings</span></div>
     <div class="hat"><i>🎙️</i><b>Podcaster</b><span>Cowboys and Indians</span></div>
   </div>
 </div></section>
@@ -392,10 +394,9 @@ function countUp(el) {
   })(t0);
 }
 
-/* terminal typing */
+/* terminal typing — runs even with reduced motion (it's text, not movement) */
 (function type() {
   const out = document.getElementById("typed");
-  if (reduce) { out.textContent = TYPED[0]; return; }
   let w = 0, c = 0, del = false;
   (function step() {
     const word = TYPED[w];
