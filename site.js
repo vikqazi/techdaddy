@@ -4,9 +4,9 @@
    hue: two colors for the card art */
 const BUILDS = [
   {
-    title: "Granite Flyway", icon: "🦆", hue: ["#0e7a8f", "#1d3fa8"], wide: true,
+    title: "Flightline", icon: "🦆", hue: ["#0e7a8f", "#1d3fa8"], wide: true,
     status: "live", cat: "Hunting",
-    blurb: "A waterfowl hunting map for New England — zones, season dates, closures and special-rule areas, all on one map.",
+    blurb: "A waterfowl hunting map for New England, formerly Granite Flyway — zones, season dates, closures and special-rule areas, all on one map.",
     points: ["NH, MA, ME and RI so far, rolling down the coast", "State lines welded so border hunters see both sides seamlessly", "Daily eBird layer: recent waterfowl sightings at public hotspots", "Built from official state GIS + Census data — nothing made up"],
     tags: ["Map", "GIS", "Waterfowl"],
     link: "https://vikqazi.github.io/granite-flyway/", linkText: "Open map"
