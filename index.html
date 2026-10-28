@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TechDaddy</title>
 <meta name="description" content="TechDaddy — a dad who builds things. Hunting maps, apps, gear builders and field data.">
-<meta name="theme-color" content="#05070d">
+<meta name="theme-color" content="#f3eee2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -63,6 +63,7 @@ nav .links a::before{content:"/";color:var(--dim);margin-right:2px}
 .hero h1{font-size:clamp(44px,8.4vw,104px);margin:26px 0 22px;font-weight:700}
 .hero h1 .g{background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite}
 @keyframes sheen{to{background-position:200% center}}
+.tagline{max-width:640px;font-size:clamp(17px,2vw,20px);color:var(--muted);margin:10px 0 20px}
 .term{font-family:var(--mono);font-size:clamp(14px,1.8vw,17px);color:var(--muted);margin:0 0 34px;min-height:1.6em}
 .term .p{color:var(--cyan)}
 .term .cur{display:inline-block;width:9px;height:1.1em;background:var(--cyan);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
@@ -187,11 +188,77 @@ footer a:hover{color:var(--cyan)}
   .rv{opacity:1;transform:none}
 }
 </style>
+<style>
+/* ===== TOPO CARTOGRAPHER THEME ===== */
+:root{
+  --bg:#f3eee2; --bg2:#ebe4d3; --paper:#fffdf7; --glass:rgba(255,253,247,.7); --glass-hi:#fffdf7;
+  --line:#d9d0b9; --line-hi:#2f6b4f;
+  --ink:#1d2a24; --muted:#5b665f; --dim:#948e7b;
+  --cyan:#2f6b4f; --violet:#2f6b4f; --pink:#c8361d; --lime:#2f6b4f; --amber:#c27a12; --pin:#c8361d;
+  --grad:linear-gradient(90deg,#2f6b4f,#2f6b4f);
+}
+::selection{background:#2f6b4f;color:#fffdf7}
+body{background:var(--bg);color:var(--ink)}
+#net,.orb,.bg-grid{display:none}
+#topo{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.noise{opacity:.07;mix-blend-mode:multiply}
+
+nav .bar{background:rgba(243,238,226,.82);border-color:var(--line)}
+.logo .mark{background:var(--ink);color:var(--bg);box-shadow:none}
+.logo b{background:none;color:#2f6b4f;-webkit-text-fill-color:#2f6b4f}
+
+.pill{background:var(--paper)}
+.pill .dot{background:var(--pin);animation:pingred 2s infinite}
+@keyframes pingred{0%{box-shadow:0 0 0 0 rgba(200,54,29,.55)}70%{box-shadow:0 0 0 9px rgba(200,54,29,0)}100%{box-shadow:0 0 0 0 rgba(200,54,29,0)}}
+.hero h1 .g{background:none;color:#2f6b4f;-webkit-text-fill-color:#2f6b4f;animation:none;
+  text-decoration:underline wavy var(--pin);text-decoration-thickness:3px;text-underline-offset:.18em}
+.term .p{color:#2f6b4f}
+.term .cur{background:var(--pin)}
+
+.btn.primary{background:var(--ink);color:var(--bg);box-shadow:0 8px 24px -10px rgba(29,42,36,.55)}
+.btn.primary:hover{box-shadow:0 12px 28px -10px rgba(29,42,36,.6)}
+.btn.ghost{background:var(--paper);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+.stats{background:var(--paper)}
+
+.ticker{background:var(--bg2)}
+.ticker .track span::before{content:"▲";color:var(--pin)}
+
+.filters{background:var(--paper)}
+.filters button.on{background:var(--ink);color:var(--bg);box-shadow:none}
+
+.card::before{background:radial-gradient(420px circle at var(--mx) var(--my),#2f6b4f,rgba(200,54,29,.6) 35%,transparent 60%)}
+.card .in{background:var(--paper)}
+.card .in::after{background:radial-gradient(300px circle at var(--mx) var(--my),rgba(47,107,79,.07),transparent 60%)}
+.art .mesh{background:var(--bg2)!important}
+.art .lines{mask-image:none;-webkit-mask-image:none;background-size:cover;background-position:center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 170' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%23c9bea2' stroke-width='1'%3E%3Cpath d='M-20 150 C60 110 120 160 200 120 S330 60 420 100'/%3E%3Cpath d='M-20 128 C70 88 130 140 205 100 S330 40 420 78'/%3E%3Cpath d='M-20 106 C80 66 140 120 210 80 S330 20 420 56'/%3E%3Cpath stroke='%23b3a684' stroke-width='1.6' d='M-20 84 C90 44 150 100 215 60 S330 0 420 34'/%3E%3Cpath d='M-20 62 C100 22 160 80 220 40 S330 -20 420 12'/%3E%3Cellipse cx='300' cy='120' rx='60' ry='26'/%3E%3Cellipse cx='300' cy='120' rx='36' ry='14'/%3E%3C/g%3E%3C/svg%3E")}
+.art::after{background:linear-gradient(transparent,var(--paper))}
+.art .glyph{filter:drop-shadow(0 8px 12px rgba(29,42,36,.18))}
+.art .pinmark{position:absolute;z-index:1;left:74%;top:30%;width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pin);box-shadow:0 2px 4px rgba(0,0,0,.25)}
+.status{background:rgba(255,253,247,.92);border-color:var(--line);color:var(--ink)}
+.status.season i{background:#2f6b4f;box-shadow:none}
+.status.live i{background:#2f9b5f;box-shadow:none}
+.status.building i{background:var(--amber);box-shadow:none}
+.idx{color:var(--dim)}
+.body li{color:#3c4842}
+.body li::before{color:var(--pin)}
+.go{color:#2f6b4f}
+.go:hover{text-shadow:none;text-decoration:underline}
+
+.entry,.hat{background:var(--paper)}
+.entry time{color:var(--pin)}
+.eyebrow{color:var(--pin)}
+footer{color:var(--dim)}
+footer a:hover{color:#2f6b4f}
+
+/* map-style grid readout that follows the cursor */
+#gridref{position:fixed;z-index:3;pointer-events:none;font:11px var(--mono);color:var(--ink);background:rgba(255,253,247,.9);border:1px solid var(--line);border-radius:6px;padding:3px 7px;opacity:0;transition:opacity .2s;transform:translate(14px,14px)}
+#gridref::before{content:"";position:absolute;left:-14px;top:-14px;width:9px;height:9px;border:1.5px solid var(--pin);border-radius:50%}
+@media (hover:none){#gridref{display:none}}
+</style>
 </head>
 <body>
-<canvas id="net"></canvas>
-<div class="bg-grid"></div>
-<div class="orb a"></div><div class="orb b"></div>
 <div class="noise"></div>
 
 <nav><div class="bar">
@@ -207,6 +274,7 @@ footer a:hover{color:var(--cyan)}
 <header class="hero"><div class="wrap">
   <div class="pill rv"><span class="dot"></span>SYSTEMS ONLINE</div>
   <h1 class="rv">Engineering the<br><span class="g">outdoor life.</span></h1>
+  <p class="tagline rv">Applying my tech background to solve everyday challenges — in the field and at home.</p>
   <p class="term rv"><span class="p">vik@techdaddy:~$</span> <span id="typed"></span><span class="cur"></span></p>
   <div class="cta rv">
     <a class="btn primary" href="#builds">Explore builds <span>→</span></a>
@@ -409,44 +477,75 @@ function countUp(el) {
   })();
 })();
 
-/* constellation network background */
-(function net() {
-  const cv = document.getElementById("net"), ctx = cv.getContext("2d");
-  let W, H, pts = [], mouse = { x: -999, y: -999 };
-  const dpr = Math.min(devicePixelRatio || 1, 2);
-  function size() {
-    W = cv.width = innerWidth * dpr; H = cv.height = innerHeight * dpr;
-    const n = Math.min(90, Math.floor(innerWidth * innerHeight / 16000));
-    pts = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .25 * dpr, vy: (Math.random() - .5) * .25 * dpr }));
-  }
-  addEventListener("resize", size);
-  addEventListener("pointermove", e => { mouse.x = e.clientX * dpr; mouse.y = e.clientY * dpr; });
-  size();
-  const R = 140 * dpr;
-  function frame() {
-    ctx.clearRect(0, 0, W, H);
-    for (const p of pts) {
-      if (!reduce) { p.x += p.vx; p.y += p.vy; }
-      if (p.x < 0 || p.x > W) p.vx *= -1;
-      if (p.y < 0 || p.y > H) p.vy *= -1;
-    }
-    for (let i = 0; i < pts.length; i++) {
-      const a = pts[i];
-      for (let j = i + 1; j < pts.length; j++) {
-        const b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < R) { ctx.strokeStyle = `rgba(110,170,255,${(1 - d / R) * .22})`; ctx.lineWidth = dpr * .7; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-      }
-      const dm = Math.hypot(a.x - mouse.x, a.y - mouse.y);
-      if (dm < R * 1.4) { ctx.strokeStyle = `rgba(62,231,255,${(1 - dm / (R * 1.4)) * .5})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
-      ctx.fillStyle = "rgba(160,200,255,.7)";
-      ctx.beginPath(); ctx.arc(a.x, a.y, 1.4 * dpr, 0, 7); ctx.fill();
-    }
-    if (!reduce) requestAnimationFrame(frame);
-  }
-  frame();
-})();
-
 render("All");
+</script>
+<script>
+/* ===== TOPO CARTOGRAPHER THEME: contour-map background ===== */
+(function topo() {
+  const cv = document.createElement("canvas");
+  cv.id = "topo";
+  document.body.prepend(cv);
+  const ctx = cv.getContext("2d");
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  // a few hills and a valley, in page-fraction coordinates
+  const peaks = [[.18, .22, .22, 1], [.78, .35, .26, .9], [.55, .85, .2, .8], [.1, .8, .16, -.6], [.92, .9, .14, .6]];
+  function field(x, y, W, H) {
+    let v = 0;
+    for (const [px, py, r, a] of peaks) {
+      const dx = (x / W - px) * (W / H), dy = y / H - py;
+      v += a * Math.exp(-(dx * dx + dy * dy) / (2 * r * r));
+    }
+    return v + .06 * Math.sin(x / W * 9) * Math.cos(y / H * 7);
+  }
+  function draw() {
+    const W = cv.width = innerWidth * dpr, H = cv.height = innerHeight * dpr;
+    const s = 10 * dpr, cols = Math.ceil(W / s) + 1, rows = Math.ceil(H / s) + 1;
+    const g = new Float32Array(cols * rows);
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) g[j * cols + i] = field(i * s, j * s, W, H);
+    const step = .07;
+    for (let k = -10; k <= 16; k++) {
+      const lv = k * step, index = k % 5 === 0;
+      ctx.strokeStyle = index ? "rgba(150,136,100,.55)" : "rgba(170,156,120,.32)";
+      ctx.lineWidth = (index ? 1.4 : .8) * dpr;
+      ctx.beginPath();
+      for (let j = 0; j < rows - 1; j++) for (let i = 0; i < cols - 1; i++) {
+        const a = g[j * cols + i], b = g[j * cols + i + 1], c = g[(j + 1) * cols + i + 1], d = g[(j + 1) * cols + i];
+        const x = i * s, y = j * s, pts = [];
+        const t = (p, q) => (lv - p) / (q - p);
+        if ((a > lv) !== (b > lv)) pts.push([x + s * t(a, b), y]);
+        if ((b > lv) !== (c > lv)) pts.push([x + s, y + s * t(b, c)]);
+        if ((d > lv) !== (c > lv)) pts.push([x + s * t(d, c), y + s]);
+        if ((a > lv) !== (d > lv)) pts.push([x, y + s * t(a, d)]);
+        if (pts.length >= 2) { ctx.moveTo(pts[0][0], pts[0][1]); ctx.lineTo(pts[1][0], pts[1][1]); }
+        if (pts.length === 4) { ctx.moveTo(pts[2][0], pts[2][1]); ctx.lineTo(pts[3][0], pts[3][1]); }
+      }
+      ctx.stroke();
+    }
+  }
+  let rt;
+  addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
+  draw();
+
+  // cursor grid reference (decorative, not a real location)
+  const ref = document.createElement("div");
+  ref.id = "gridref";
+  document.body.appendChild(ref);
+  addEventListener("pointermove", e => {
+    ref.style.left = e.clientX + "px";
+    ref.style.top = e.clientY + "px";
+    ref.style.opacity = 1;
+    const ex = String(Math.round(e.clientX / innerWidth * 999)).padStart(3, "0");
+    const ny = String(Math.round((1 - e.clientY / innerHeight) * 999)).padStart(3, "0");
+    const el = Math.round(field(e.clientX * dpr, e.clientY * dpr, innerWidth * dpr, innerHeight * dpr) * 1200 + 400);
+    ref.textContent = `E${ex} N${ny} · ${el} ft`;
+  });
+  document.addEventListener("pointerleave", () => ref.style.opacity = 0);
+
+  // red map pin on each card image
+  const pin = () => document.querySelectorAll(".art:not(:has(.pinmark))").forEach(a => a.insertAdjacentHTML("beforeend", '<span class="pinmark"></span>'));
+  new MutationObserver(pin).observe(document.getElementById("grid"), { childList: true });
+  pin();
+})();
 </script>
 </body>
 </html>
