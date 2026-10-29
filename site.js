@@ -96,6 +96,20 @@ if (filters) ["All", ...new Set(BUILDS.map(b => b.cat))].forEach(c => {
 const logList = document.getElementById("logList");
 if (logList) logList.innerHTML = LOG.slice(0, +logList.dataset.limit || LOG.length).map(e => `
   <div class="entry rv"><time>${esc(e.date)}</time><div><h3>${esc(e.title)}</h3><p>${esc(e.text)}</p></div></div>`).join("");
+/* home status board: built from BUILDS, so it follows each project's status */
+const board = document.getElementById("board");
+if (board) {
+  const row = (cls, label, items) => items.length ? `
+    <div class="board-row"><span class="board-k ${cls}"><i></i>${label}</span><span class="board-v">${items.join('<b>·</b>')}</span></div>` : "";
+  const named = s => BUILDS.filter(b => b.status === s).map(b => b.link
+    ? `<a href="${b.link}" target="_blank" rel="noopener">${esc(b.title)}</a>` : `<a href="builds.html">${esc(b.title)}</a>`);
+  board.innerHTML = row("live", "LIVE", named("live")) + row("building", "BUILDING", named("building"))
+    + row("season", "IN SEASON", named("season"))
+    + row("open", "OPEN FOR", ['<a href="services.html">Small-business IT jobs</a>', '<a href="services.html#officiant">Weddings</a>']);
+  const t = document.getElementById("boardTime");
+  if (t) t.textContent = "UPDATED " + new Date(document.lastModified).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }).toUpperCase();
+}
+
 const ticker = document.getElementById("ticker");
 if (ticker) ticker.innerHTML = [...TICKER, ...TICKER].map(t => `<span>${t}</span>`).join("");
 document.getElementById("yr").textContent = new Date().getFullYear();
