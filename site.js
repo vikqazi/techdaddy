@@ -7,7 +7,7 @@ const BUILDS = [
     title: "Flightline", icon: "🦆", hue: ["#0e7a8f", "#1d3fa8"], wide: true,
     status: "live", cat: "Hunting",
     blurb: "A waterfowl hunting map for the Northeast, formerly Granite Flyway — zones, season dates, closures and special-rule areas, all on one map.",
-    points: ["Six states live: NH, MA, ME, RI, VT and NY", "State lines welded so border hunters see both sides seamlessly", "Daily eBird layer: recent waterfowl sightings at public hotspots", "Built from official state GIS + Census data — nothing made up"],
+    points: ["Seven states live: NH, MA, ME, RI, VT, NY and PA", "State lines welded so border hunters see both sides seamlessly", "Daily eBird layer: recent waterfowl sightings at public hotspots", "Built from official state GIS + Census data — nothing made up"],
     tags: ["Map", "GIS", "Waterfowl"],
     link: "https://vikqazi.github.io/flightline/", linkText: "Open map"
   },
@@ -45,7 +45,7 @@ const BUILDS = [
 
 /* ===== ADD NEW LOG ENTRIES AT THE TOP ===== */
 const LOG = [
-  { date: "2026-10-30", title: "Flightline adds Vermont and New York", text: "Six states live. New York's zones are welded to Massachusetts and Vermont, so border hunters see one seamless map." },
+  { date: "2026-10-30", title: "Flightline adds Vermont, New York and Pennsylvania", text: "Seven states live. New York's zones are welded to Massachusetts and Vermont, so border hunters see one seamless map." },
   { date: "2026-10-29", title: "Granite Flyway is now Flightline", text: "New name, new address: vikqazi.github.io/flightline. Old links still work and land on the same spot on the map." },
   { date: "2026-10-28", title: "Granite Flyway gets an eBird sightings layer", text: "Recent waterfowl sightings from public eBird hotspots now show on the map, refreshed automatically every morning." },
   { date: "2026-10-28", title: "Granite Flyway adds Maine and Rhode Island", text: "Four states live. Maine's new 2026–27 zone line (Route 2) is in, even though the state's own GIS still shows the old one." },
