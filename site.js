@@ -4,7 +4,7 @@
    hue: two colors for the card art */
 const BUILDS = [
   {
-    title: "FowlAtlas", icon: "🦆", hue: ["#0e7a8f", "#1d3fa8"], wide: true,
+    title: "Fowl Atlas", icon: "🦆", hue: ["#0e7a8f", "#1d3fa8"], wide: true,
     status: "live", cat: "Hunting",
     blurb: "A waterfowl hunting map for the whole lower 48, formerly Flightline — zones, season dates, closures and special-rule areas, all on one map.",
     points: ["All 48 lower states live, across all four flyways", "State lines welded so border hunters see both sides seamlessly", "Daily eBird layer: recent waterfowl sightings at public hotspots", "Built from official state GIS + Census data — nothing made up"],
@@ -45,7 +45,7 @@ const BUILDS = [
 
 /* ===== ADD NEW LOG ENTRIES AT THE TOP ===== */
 const LOG = [
-  { date: "2026-11-04", title: "Flightline is now FowlAtlas", text: "New name, new home: fowlatlas.com. Same map, same 48 states." },
+  { date: "2026-11-04", title: "Flightline is now Fowl Atlas", text: "New name, new home: fowlatlas.com. Same map, same 48 states." },
   { date: "2026-10-31", title: "Flightline covers the whole lower 48", text: "All 48 states went live overnight: four builds ran in parallel, one per flyway, and every shared border was welded as its neighbour landed. Pick a flyway at the top left and its states drop down." },
   { date: "2026-10-30", title: "Flightline adds Vermont, New York and Pennsylvania", text: "Seven states live. New York's zones are welded to Massachusetts and Vermont, so border hunters see one seamless map." },
   { date: "2026-10-29", title: "Granite Flyway is now Flightline", text: "New name, new address: vikqazi.github.io/flightline. Old links still work and land on the same spot on the map." },
