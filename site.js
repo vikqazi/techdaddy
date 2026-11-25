@@ -44,6 +44,14 @@ const BUILDS = [
     link: "https://techdaddyhq.com/daycare/", linkText: "Open (password)"
   },
   {
+    title: "Home Energy Audit", icon: "⚡", hue: ["#c9a227", "#2f6fb0"],
+    status: "live", cat: "Dad life",
+    blurb: "What is really driving our electric bill, worked out from three years of bills, both thermostats and NOAA weather data. Password-protected — it's a family thing.",
+    points: ["Every bill lined up against daily heating degree-days", "Thermostat runtime re-cut onto billing periods", "Shows how much heat comes from the backup resistance strips", "Encrypted page — the password decrypts it in your browser"],
+    tags: ["Data", "Charts", "Encrypted"],
+    link: "https://techdaddyhq.com/electric/", linkText: "Open (password)"
+  },
+  {
     title: "HotSpots", icon: "📍", hue: ["#7a2fd0", "#d02f8a"],
     status: "building", cat: "Apps",
     blurb: "A nightlife app that shows where the energy is right now — anonymous check-ins, no stalking.",
@@ -54,6 +62,7 @@ const BUILDS = [
 
 /* ===== ADD NEW LOG ENTRIES AT THE TOP ===== */
 const LOG = [
+  { date: "2026-11-25", title: "Home Energy Audit goes up", text: "A password-protected deep dive into our electric bill: three years of statements, both thermostats and NOAA weather, lined up to show where the money goes. Like Daycare Scout, the page ships encrypted." },
   { date: "2026-11-25", title: "Daycare Scout goes up", text: "A password-protected family tool: every infant daycare on both commutes on a live map, with rush-hour detour estimates and live-traffic links. The page ships encrypted — the password is the key." },
   { date: "2026-11-25", title: "Fowl Atlas is on the App Store", text: "The iPhone app is live. Find it on the Fowl Atlas card, or search \"Fowl Atlas\" in the App Store." },
   { date: "2026-11-04", title: "Flightline is now Fowl Atlas", text: "New name, new home: fowlatlas.com. Same map, same 48 states." },
