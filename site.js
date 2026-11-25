@@ -41,7 +41,7 @@ const BUILDS = [
     blurb: "Every licensed infant daycare along two commutes, researched and pinned on a live map so we can pick the right one. Password-protected — it's a family thing.",
     points: ["39 centers mapped with hours, prices and ratings", "Rush-hour detour estimate for every center", "One-tap live-traffic check: home → daycare → work", "Encrypted page — the password decrypts it in your browser"],
     tags: ["Web app", "Maps", "Encrypted"],
-    link: "https://techdaddyhq.com/daycare/", linkText: "Open (password)"
+    link: "https://techdaddyhq.com/daycare/", linkText: "Open (password)", locked: true
   },
   {
     title: "Home Energy Audit", icon: "⚡", hue: ["#c9a227", "#2f6fb0"],
@@ -49,7 +49,7 @@ const BUILDS = [
     blurb: "What is really driving our electric bill, worked out from three years of bills, both thermostats and NOAA weather data. Password-protected — it's a family thing.",
     points: ["Every bill lined up against daily heating degree-days", "Thermostat runtime re-cut onto billing periods", "Shows how much heat comes from the backup resistance strips", "Encrypted page — the password decrypts it in your browser"],
     tags: ["Data", "Charts", "Encrypted"],
-    link: "https://techdaddyhq.com/electric/", linkText: "Open (password)"
+    link: "https://techdaddyhq.com/electric/", linkText: "Open (password)", locked: true
   },
   {
     title: "HotSpots", icon: "📍", hue: ["#7a2fd0", "#d02f8a"],
@@ -126,7 +126,7 @@ if (board) {
   const row = (cls, label, items) => items.length ? `
     <div class="board-row"><span class="board-k ${cls}"><i></i>${label}</span><span class="board-v">${items.join('<b>·</b>')}</span></div>` : "";
   const named = s => BUILDS.filter(b => b.status === s).map(b => b.link
-    ? `<a href="${b.link}" target="_blank" rel="noopener">${esc(b.title)}</a>` : `<a href="builds.html">${esc(b.title)}</a>`);
+    ? `<a href="${b.link}" target="_blank" rel="noopener"${b.locked ? ' title="Password-protected"' : ""}>${esc(b.title)}${b.locked ? " 🔒" : ""}</a>` : `<a href="builds.html">${esc(b.title)}</a>`);
   board.innerHTML = row("live", "LIVE", named("live")) + row("building", "BUILDING", named("building"))
     + row("season", "IN SEASON", named("season"))
     + row("open", "OPEN FOR", ['<a href="services.html">Small-business IT jobs</a>', '<a href="services.html#officiant">Weddings</a>']);
