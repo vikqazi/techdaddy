@@ -36,6 +36,14 @@ const BUILDS = [
     link: "https://vikqazi.github.io/baby-gear-builder/", linkText: "Build setup"
   },
   {
+    title: "Daycare Scout", icon: "🧸", hue: ["#77906f", "#5b7a9d"],
+    status: "live", cat: "Dad life",
+    blurb: "Every licensed infant daycare along two commutes, researched and pinned on a live map so we can pick the right one. Password-protected — it's a family thing.",
+    points: ["39 centers mapped with hours, prices and ratings", "Rush-hour detour estimate for every center", "One-tap live-traffic check: home → daycare → work", "Encrypted page — the password decrypts it in your browser"],
+    tags: ["Web app", "Maps", "Encrypted"],
+    link: "https://techdaddyhq.com/daycare/", linkText: "Open (password)"
+  },
+  {
     title: "HotSpots", icon: "📍", hue: ["#7a2fd0", "#d02f8a"],
     status: "building", cat: "Apps",
     blurb: "A nightlife app that shows where the energy is right now — anonymous check-ins, no stalking.",
@@ -46,6 +54,7 @@ const BUILDS = [
 
 /* ===== ADD NEW LOG ENTRIES AT THE TOP ===== */
 const LOG = [
+  { date: "2026-11-25", title: "Daycare Scout goes up", text: "A password-protected family tool: every infant daycare on both commutes on a live map, with rush-hour detour estimates and live-traffic links. The page ships encrypted — the password is the key." },
   { date: "2026-11-25", title: "Fowl Atlas is on the App Store", text: "The iPhone app is live. Find it on the Fowl Atlas card, or search \"Fowl Atlas\" in the App Store." },
   { date: "2026-11-04", title: "Flightline is now Fowl Atlas", text: "New name, new home: fowlatlas.com. Same map, same 48 states." },
   { date: "2026-10-31", title: "Flightline covers the whole lower 48", text: "All 48 states went live overnight: four builds ran in parallel, one per flyway, and every shared border was welded as its neighbour landed. Pick a flyway at the top left and its states drop down." },
