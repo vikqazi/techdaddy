@@ -119,6 +119,7 @@ section{padding:90px 0}
 .foot{margin-top:auto;padding-top:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font:11px var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.gos{display:flex;gap:16px;flex-wrap:wrap}
 .go{font:600 13px var(--mono);text-decoration:none;color:var(--cyan);display:inline-flex;gap:6px;align-items:center}
 .go:hover{text-shadow:0 0 12px var(--cyan)}
 .go span{transition:transform .2s}
