@@ -126,9 +126,9 @@ const board = document.getElementById("board");
 if (board) {
   const row = (cls, label, items) => items.length ? `
     <div class="board-row"><span class="board-k ${cls}"><i></i>${label}</span><span class="board-v">${items.join('<b>·</b>')}</span></div>` : "";
-  const named = s => BUILDS.filter(b => b.status === s).map(b => b.link
+  const named = (s, locked) => BUILDS.filter(b => b.status === s && (locked === undefined || !!b.locked === locked)).map(b => b.link
     ? `<a href="${b.link}" target="_blank" rel="noopener"${b.locked ? ' title="Password-protected"' : ""}>${esc(b.title)}${b.locked ? " 🔒" : ""}</a>` : `<a href="builds.html">${esc(b.title)}</a>`);
-  board.innerHTML = row("live", "LIVE", named("live")) + row("building", "BUILDING", named("building"))
+  board.innerHTML = row("live", "LIVE", named("live", false)) + row("private", "LIVE · PASSWORD", named("live", true)) + row("building", "BUILDING", named("building"))
     + row("season", "IN SEASON", named("season"))
     + row("open", "OPEN FOR", ['<a href="services.html">Small-business IT jobs</a>', '<a href="services.html#officiant">Weddings</a>']);
   const t = document.getElementById("boardTime");

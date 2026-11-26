@@ -169,6 +169,7 @@ section{padding:90px 0}
 .board-k{display:inline-flex;align-items:center;gap:9px;font:600 12px var(--mono);letter-spacing:.08em}
 .board-k i{width:9px;height:9px;border-radius:50%}
 .board-k.live i{background:#2f9b5f;box-shadow:0 0 0 3px rgba(47,155,95,.18);animation:pulse 2s infinite}
+.board-k.private i{border:2px solid #2f9b5f;box-sizing:border-box}
 .board-k.building i{background:var(--amber)}
 .board-k.season i{background:var(--cyan)}
 .board-k.open i{background:var(--pin)}
