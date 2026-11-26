@@ -14,7 +14,7 @@ const BUILDS = [
   },
   {
     title: "Grouse Ledger", icon: "🍂", hue: ["#a8501d", "#5a1d8f"], wide: true,
-    status: "season", cat: "Hunting",
+    status: "live", cat: "Hunting",
     blurb: "10+ seasons, a crew of about 20 hunters, and hundreds of birds in the Maine woods. What we learn gets shared and turned into data — GPS tracks, flush pins and weather.",
     points: ["43% of flushes came in the last two hours of light", "Drizzle beat dry days; steady rain killed it", "Mixed hardwood/softwood edges ≈1.7× more birds"],
     tags: ["Data", "GPS", "Upland"],
