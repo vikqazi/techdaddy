@@ -17,7 +17,8 @@ const BUILDS = [
     status: "season", cat: "Hunting",
     blurb: "10+ seasons, a crew of about 20 hunters, and hundreds of birds in the Maine woods. What we learn gets shared and turned into data — GPS tracks, flush pins and weather.",
     points: ["43% of flushes came in the last two hours of light", "Drizzle beat dry days; steady rain killed it", "Mixed hardwood/softwood edges ≈1.7× more birds"],
-    tags: ["Data", "GPS", "Upland"]
+    tags: ["Data", "GPS", "Upland"],
+    link: "/grouse/", linkText: "Crew only 🔒"
   },
   {
     title: "Swamp Yacht", icon: "🚤", hue: ["#2f7a3a", "#0e5a6f"],
